@@ -15,7 +15,7 @@ new Vue({
             this.year += e;
         },
         updataXY: function (e) {
-            //相对于父盒子的坐标
+            //offsetX/Y获取到是触发点相对被触发dom的左上角距离
             this.x = e.offsetX;
             this.y = e.offsetY;
         }

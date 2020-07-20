@@ -28,6 +28,12 @@
             <button v-on:click="add(-10)">Subtract 10 years</button>
             <div id="canvas" v-on:mousemove="updataXY">({{x}},{{y}})</div>
         </div>
+        <div>
+            5.事件修饰符<br>
+            v-on:click.once 触发一次
+            v-on:dbclick.prevent 双击事件,组织默认事件
+            v-on:click.once
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
