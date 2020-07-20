@@ -1,0 +1,11 @@
+.app div {
+    margin-bottom: 20px;
+}
+
+#canvas {
+    width: 600px;
+    margin-top: 10px;
+    padding: 200px 20px;
+    text-align: center;
+    border: 1px solid black;
+}
