@@ -6,10 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
-
+    <div class="app">
+        <div>
+            {{greet("afternoon")}},everyone!
+            My name is {{name}}.<br>
+        </div>
+        <div>
+            3.v-bind<br>
+            <a v-bind:href="website">百度一下</a><br>
+            <a :href="website">简写百度一下</a>
+        </div>
+        <div>
+            4.v-on This year is {{year}}<br>
+            <button v-on:click="add(1)">Add a year</button>
+            <button v-on:click="add(-1)">Subtract a year</button>
+            <button v-on:click="add(10)">Add 10 years</button>
+            <button v-on:click="add(-10)">Subtract 10 years</button>
+            <div id="canvas" v-on:mousemove="updataXY">({{x}},{{y}})</div>
+        </div>
+    </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
