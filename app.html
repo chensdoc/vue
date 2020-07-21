@@ -18,7 +18,8 @@
         <div>
             3.v-bind<br>
             <a v-bind:href="website">百度一下</a><br>
-            <a :href="website">简写百度一下</a>
+            <a :href="website">简写百度一下</a> <br>
+            <a href="javascript:">空的a标签</a>
         </div>
         <div>
             4.v-on This year is {{year}}<br>
@@ -30,9 +31,26 @@
         </div>
         <div>
             5.事件修饰符<br>
-            v-on:click.once 触发一次
-            v-on:dbclick.prevent 双击事件,组织默认事件
-            v-on:click.once
+            .stop 停止事件冒泡<br>
+            .prevent 阻止事件的默认行为<br>
+            .capture 添加事件监听器时使用事件捕获模式,即内部元素触发的事件先在此处理，
+            然后才交由内部元素进行处理<br>
+            .self 只当在 event.target 是当前元素自身时触发处理函数,即事件不是从内部元素触发的<br>
+            .once 只触发一次<br>
+            .passive .passive 修饰符尤其能够提升移动端的性能，不要把 .passive 和 .prevent 一起使用，因为 .prevent 将会被忽略，<br>
+            同时浏览器可能会向你展示一个警告。请记住，.passive 会告诉浏览器你不想阻止事件的默认行为<br>
+            按键修饰符<br>
+            v-on:keyup.enter<br>
+            v-on:keyup.page-down<br>
+            为了在必要的情况下支持旧浏览器，Vue 提供了绝大多数常用的按键码的别名：<br>
+            .enter .tab .delete (捕获“删除”和“退格”键)<br>
+            .esc .space .up .down .left .right<br>
+            系统修饰键(.ctrl .alt .shift .meta)<br>
+            鼠标按钮修饰符(.left .right .middle)<br>
+
+
+
+
         </div>
     </div>
     <script src="app.js"></script>
