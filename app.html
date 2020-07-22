@@ -47,10 +47,71 @@
             .esc .space .up .down .left .right<br>
             系统修饰键(.ctrl .alt .shift .meta)<br>
             鼠标按钮修饰符(.left .right .middle)<br>
+        </div>
+        <div>
+            v-model双向绑定<br>
+            <input type="text" v-model="name"> {{name}}
+        </div>
+        <div>
+            ref的使用 获取对应元素对象<br>
+            <input type="text" ref="showVal" v-on:keyup.enter="showVal">
+        </div>
+        <div>
+            watch的使用 监听新旧属性的变化<br>
+            监听新旧x属性的变化 <input type="text" v-model="a">
 
+        </div>
+        <div>
+            computed 变化频率高的使用计算属性，有利于性能优化<br>
+            <button @click="b++">Add to B</button>
+            <button @click="c++">Add to C</button>
+            <p>B--{{b}}</p>
+            <p>C--{{c}}</p>
+            <p>Age+B={{addToB}}</p>
+            <p>Age+C={{addToC}}</p>
+            <h5>Dynamic CSS</h5>
+            <h6>Example 2</h6>
+            <button @click="nearby = !nearby">Toggle nearby</button>
+            <button @click="available = !available">Toggle available</button>
+            <div v-bind:class="compClasses">
+                <span id="abc">Ryu</span>
+            </div>
+        </div>
+        <div>
+            v-if 和 v-show<br>
+            v-if 能够控制元素的显示和隐藏（移出元素） template<br>
+            v-if,v-else-if,v-else<br>
+            v-show类似v-if<br>
+            区别：1.v-if控制dom的移出、添加<br>
+            v-show控制dom的显示与隐藏（display）<br>
+            频繁的切换显示/隐藏时要使用v-show<br>
+            只判断一次时，使用v-if<br>
+            2.v-if可以写在template上，v-show不行
+        </div>
+        <div>
+            v-for指令<br>
+            1.数组<br>
+            <ul>
+                <li v-for="character in characters">{{ character }}</li>
+            </ul>
+            2.对象<br>
+            <ul>
+                <li v-for="(ninja, index) in ninjas">{{ index }} . {{ ninja.name }} - {{ ninja.age }}</li>
+            </ul>
+            Example<br>
+            <!-- bag image -->
+            <div id="bag" v-bind:class="{ burst: ended }"></div>
 
+            <!-- bag health bar -->
+            <div id="bag-health">
+                <div v-bind:style="{ width: health + '%' }"></div>
+            </div>
 
-
+            <!-- game control buttons -->
+            <div id="controls">
+                <button v-on:click="punch" v-show="!ended">Punch</button>
+                <button v-on:click="restart">Restart</button>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>
