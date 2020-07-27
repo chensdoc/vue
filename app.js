@@ -1,6 +1,11 @@
+Vue.component('greeting', {
+    template: `<p>组件应用</p>`
+})
+
 new Vue({
     el: ".app",
     data: {
+        todos: [],
         name: "zhangsan",
         website: "https://www.baidu.com",
         year: 2020,
@@ -75,5 +80,57 @@ new Vue({
                 nearby: this.nearby,
             }
         }
+    },
+    mounted: function () {
+        fetch("http://jsonplaceholder.typicode.com/todos").then(res => {
+            // console.log(res.json())
+            return res.json();
+        }).then(todos => {
+            // console.log(todos);
+            this.todos = todos;
+        })
     }
-})
+});
+
+
+var one = new Vue({
+    el: "#vue-app-one",
+    data: {
+        title: "app-one"
+    },
+    computed: {
+        greet() {
+            return "this is app-one"
+        }
+    }
+});
+
+var two = new Vue({
+    el: "#vue-app-two",
+    data: {
+        title: "app-two"
+    },
+    computed: {
+        greet() {
+            return "this is app-two"
+        }
+    },
+    methods: {
+        changeTitle: function () {
+            one.title = "this title is changed"
+        }
+    }
+});
+
+
+
+
+// Vue.component('custom-input', {
+//     props: ['value'],
+//     template: `
+//       <input
+//         v-bind:value="value"
+//         v-on:input="$emit('input', $event.target.value)"
+//       >
+//     `
+// })

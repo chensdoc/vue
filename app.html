@@ -113,6 +113,32 @@
                 <button v-on:click="restart">Restart</button>
             </div>
         </div>
+        <div>
+            12.多个vue实例<br>
+            13.组件应用(全局组件应该放在实例的前面)<br>
+            <greeting></greeting>
+        </div>
+        <div>
+            14.fetch<br>
+            <ul>
+                <li v-for="todo in todos">
+                    {{todo.title}}<br>
+                    {{todo.completed}}
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div id="vue-app-one">
+        <h2>{{title}}</h2>
+        <p>{{greet}}</p>
+        <greeting></greeting>
+    </div>
+    <div id="vue-app-two">
+        <h2>{{title}}</h2>
+        <p>{{greet}}</p>
+        <greeting></greeting>
+        <button v-on:click="changeTitle">Change App One Title</button>
     </div>
     <script src="app.js"></script>
 </body>
