@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="app.css">
 </head>
 
@@ -49,20 +50,20 @@
             鼠标按钮修饰符(.left .right .middle)<br>
         </div>
         <div>
-            v-model双向绑定<br>
+            6.v-model双向绑定<br>
             <input type="text" v-model="name"> {{name}}
         </div>
         <div>
-            ref的使用 获取对应元素对象<br>
+            7.ref的使用 获取对应元素对象<br>
             <input type="text" ref="showVal" v-on:keyup.enter="showVal">
         </div>
         <div>
-            watch的使用 监听新旧属性的变化<br>
+            8.watch的使用 监听新旧属性的变化<br>
             监听新旧x属性的变化 <input type="text" v-model="a">
 
         </div>
         <div>
-            computed 变化频率高的使用计算属性，有利于性能优化<br>
+            9.computed 变化频率高的使用计算属性，有利于性能优化<br>
             <button @click="b++">Add to B</button>
             <button @click="c++">Add to C</button>
             <p>B--{{b}}</p>
@@ -78,7 +79,7 @@
             </div>
         </div>
         <div>
-            v-if 和 v-show<br>
+            10.v-if 和 v-show<br>
             v-if 能够控制元素的显示和隐藏（移出元素） template<br>
             v-if,v-else-if,v-else<br>
             v-show类似v-if<br>
@@ -89,7 +90,7 @@
             2.v-if可以写在template上，v-show不行
         </div>
         <div>
-            v-for指令<br>
+            11.v-for指令<br>
             1.数组<br>
             <ul>
                 <li v-for="character in characters">{{ character }}</li>
@@ -111,6 +112,24 @@
             <div id="controls">
                 <button v-on:click="punch" v-show="!ended">Punch</button>
                 <button v-on:click="restart">Restart</button>
+            </div>
+            ---fetch以及axios的使用
+            <div>
+                <form @submit.prevent="onSubmit1">
+                    <input type="text" v-model="todo.title">
+                    <input type="checkbox" v-model="todo.completed">
+                    <input type="submit" value="提交">
+                </form>
+                <ul>
+                    <li v-for="todo in todos">
+                        <p>
+                            {{todo.title}}<br>
+                            {{todo.completed}}
+                        </p>
+
+
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

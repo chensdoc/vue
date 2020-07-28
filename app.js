@@ -1,6 +1,11 @@
 new Vue({
     el: ".app",
     data: {
+        todos: [],
+        todo: {
+            title: "",
+            completed: false
+        },
         name: "zhangsan",
         website: "https://www.baidu.com",
         year: 2020,
@@ -14,17 +19,17 @@ new Vue({
         nearby: false,
         characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
         ninjas: [{
-                name: 'Ryu',
-                age: 25
-            },
-            {
-                name: 'Yoshi',
-                age: 35
-            },
-            {
-                name: 'Ken',
-                age: 55
-            }
+            name: 'Ryu',
+            age: 25
+        },
+        {
+            name: 'Yoshi',
+            age: 35
+        },
+        {
+            name: 'Ken',
+            age: 55
+        }
         ],
         health: 100,
         ended: false
@@ -54,6 +59,26 @@ new Vue({
         restart: function () {
             this.health = 100;
             this.ended = false;
+        },
+        onSubmit: function () {
+            // console.log(this.todo)
+            fetch("http://jsonplaceholder.typicode.com/todos", {
+                method: "POST",
+                body: JSON.stringify(this.todo),
+                headers: {
+                    'content-type': 'application/json'
+                }
+            }).then(res => {
+                return res.json();
+            }).then(todo => {
+                // console.log(todo)
+                this.todos.unshift(todo);
+            })
+        },
+        onSubmit1: function () {
+            axios.post("http://jsonplaceholder.typicode.com/todos", this.todo).then(res => {
+                console.log(res.data)
+            })
         }
     },
     watch: {
@@ -75,5 +100,15 @@ new Vue({
                 nearby: this.nearby,
             }
         }
-    }
+    },
+    mounted:
+        function () {
+            fetch("http://jsonplaceholder.typicode.com/todos").then(res => {
+                return res.json();
+            }).then(arr => {
+                this.todos = arr;
+            })
+        }
+
+
 })
