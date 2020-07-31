@@ -42,13 +42,21 @@ babel.config.js  用于语法转换配置
 
 Vue.component("cpmponentName",xx1)
 
+3.调用组件<xx1/>
+
 注册局部组件
 
 1.引入组件
 
 2.注册局部组件
 
-components:{xx1}
+components:{xx1}     // “aaa-bbb”:xx1
+
+3.调用组件
 
 
+
+组件css样式 scope
+
+多个组件
 
