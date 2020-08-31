@@ -5,4 +5,7 @@
                 {name: 'Tango', speciality: 'Conditionals', show: false},
                 {name: 'Kami', speciality: 'Webpack', show: false},
                 {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-            ]
+]
+
+1.Content组件内删除数组
+2.父子组件传值3种方式（emit，订阅subscribe）
