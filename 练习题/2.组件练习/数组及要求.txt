@@ -1,4 +1,4 @@
-[
+﻿[
                 {name: 'Ryu', speciality: 'Vue Components', show: false},
                 {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
                 {name: 'Hitoshi', speciality: 'Click Events', show: false},
@@ -8,4 +8,4 @@
 ]
 
 1.Content组件内删除数组
-2.父子组件传值3种方式（emit，订阅subscribe）
+2.父子组件传值3种方式（props,自定义事件，消息发布与订阅）
