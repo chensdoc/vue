@@ -1,0 +1,13 @@
+todos: [
+                    {title: '学习Vue的组件通信', finished: true},
+                    {title: '学习React的redux', finished: false},
+                    {title: '写一个Vue的项目', finished: true},
+                    {title: '搬一车的砖', finished: false}
+                ]
+
+1.Header.vue       2+3+7+3
+2.List.vue           4+4+3
+3.Footer.vue      4+3+3+2
+
+
+this.todos.reduce
