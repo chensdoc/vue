@@ -8,6 +8,12 @@ todos: [
 1.Header.vue       2+3+7+3
 2.List.vue           4+4+3
 3.Footer.vue      4+3+3+2
+4.数据本地化和深度监视
+5.自定义事件
+6.消息订阅与发布
+7.slot
 
+填坑：
+1.this.todos.reduce
+2.鼠标移入时所有li都被触发
 
-this.todos.reduce
